@@ -1,0 +1,46 @@
+[project]
+name = "interact2ar"
+version = "0.1.0"
+description = "Official research code for Interact2Ar text-conditioned human-human interaction generation."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "clip @ git+https://github.com/openai/CLIP.git",
+    "h5py==3.14.0",
+    "human-body-prior @ git+https://github.com/nghorbani/human_body_prior.git",
+    "lightning==2.5.2",
+    "numpy==1.26.4",
+    "pyyaml==6.0.2",
+    "scipy==1.15.3",
+    "tensorboard==2.20.0",
+    "torch==2.9.1",
+    "torchvision==0.24.1",
+    "tqdm==4.67.1",
+]
+
+[project.optional-dependencies]
+visualization = [
+    "aitviewer==1.13.0",
+]
+
+dev = [
+    "pytest==8.4.2",
+    "ruff==0.8.6",
+]
+
+[tool.uv]
+package = false
+# human-body-prior imports cleanly on newer Torch, but its package metadata
+# still pins torch<2.6. Override that stale pin so RTX 50-series GPUs can use
+# the CUDA 12.8 PyTorch wheels that include sm_120 kernels.
+override-dependencies = [
+    "torch==2.9.1",
+]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

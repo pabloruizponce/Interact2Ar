@@ -1,0 +1,24 @@
+# Main-paper Interact2Ar denoiser configuration.
+# Public name for the main-paper part-aware denoiser.
+TYPE: part_aware_interaction
+
+MOTION_REP: 672
+LATENT_DIM: 512
+FF_SIZE: 1024
+N_BLOCKS: 8
+N_HEADS: 8
+
+HANDS_REP: 180
+HANDS_LATENT_DIM: 512
+HANDS_FF_SIZE: 1024
+HANDS_N_BLOCKS: 8
+HANDS_N_HEADS: 8
+
+TRANS_REP: 6
+TRANS_LATENT_DIM: 256
+TRANS_FF_SIZE: 512
+TRANS_N_BLOCKS: 4
+TRANS_N_HEADS: 4
+
+DROPOUT: 0.1
+TEXT_EMB_DIM: 768

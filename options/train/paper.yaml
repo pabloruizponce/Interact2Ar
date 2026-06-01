@@ -1,0 +1,8 @@
+# Main-paper training schedule recovered from checkpoint metadata.
+LEARNING_RATE: 0.0001
+EPOCHS: 5000
+BATCH_SIZE: 32
+WEIGHT_DECAY: 0.00002
+LR_SCH_GAMA: 0.1
+LR_SCH_STEP: 0.80
+EMA: True

@@ -1,0 +1,52 @@
+{
+  "models": [
+    {
+      "name": "interact2ar_mixed_memory",
+      "role": "Main-paper Interact2Ar mixed-memory checkpoint with ms=15, ml=45, delta=5.",
+      "source": "checkpoints/interact2ar_mixed_memory.ckpt",
+      "target": "checkpoints/interact2ar_mixed_memory.ckpt",
+      "sha256": "543a33b619b2bf175f5a99aacf2327350c65e4c99ae03c3be25911ed1f0fe997",
+      "size_bytes": 3522226119,
+      "metadata": {
+        "autoregressive": true,
+        "pred_motion_length": 30,
+        "prefix_motion_length": 15,
+        "max_long_term": 9,
+        "downsampling_long_term": 5,
+        "covered_context_frames": 60,
+        "memory_tokens": 24,
+        "checkpoint_epoch": 4999,
+        "checkpoint_global_step": 350000,
+        "model_class": "Interact2ArModel",
+        "denoiser_class": "PartAwareInteractionDenoiser"
+      }
+    }
+  ],
+  "evaluators": [
+    {
+      "name": "joints_full",
+      "role": "Main-paper joint evaluator without normalization for full-body motion embeddings.",
+      "source": "checkpoints-evaluator/joints_full/model/finest.tar",
+      "target": "checkpoints-evaluator/joints_full/model/finest.tar",
+      "sha256": "04f153066eadb8d83ed798fd572491868a86d6a04b88f26b87a3448fb3ec81d5",
+      "size_bytes": 246164449
+    },
+    {
+      "name": "joints_body",
+      "role": "Main-paper joint evaluator without normalization for body motion embeddings.",
+      "source": "checkpoints-evaluator/joints_body/model/finest.tar",
+      "target": "checkpoints-evaluator/joints_body/model/finest.tar",
+      "sha256": "aa81544acc3c7f687525ea9bc99935402d9d8f18d48fc22b2a00f58a869f5ada",
+      "size_bytes": 244542433
+    },
+    {
+      "name": "joints_hands",
+      "role": "Main-paper joint evaluator without normalization for hand motion embeddings.",
+      "source": "checkpoints-evaluator/joints_hands/model/finest.tar",
+      "target": "checkpoints-evaluator/joints_hands/model/finest.tar",
+      "sha256": "092ffc9d8e8c5426ecf236398db619035b5001835d416ce81f7cd6a0a49678d3",
+      "size_bytes": 244935649
+    }
+  ],
+  "download_url": "https://drive.google.com/drive/folders/1SxfyL29SIwS80GBByYoXrmO_9eMveuNE?usp=sharing"
+}

@@ -1,0 +1,36 @@
+# Main-paper Interact2Ar Mixed Memory configuration.
+# Public checkpoint: checkpoints/interact2ar_mixed_memory.ckpt
+DIFFUSION_STEPS: 10
+BETA_SCHEDULER: cosine
+SAMPLER: uniform
+STRATEGY: ddim50
+CFG_WEIGHT: 2.5
+
+CLIP_D_MODEL: 768
+TEXT_EMBEDDER: clip
+TEXT_EMB_DIM: 768
+CLIP_DROPOUT: 0.1
+CLIP_N_HEADS: 8
+CLIP_DIM_FEEDFORWARD: 2048
+CLIP_ACTIVATION: gelu
+CLIP_N_LAYERS: 2
+CLIP_LN: 768
+
+LOSS_CONFIG: full
+
+NORMALIZE: False
+T_BAR: 7
+
+LAMBDA_LOSSES:
+  mse: 1
+  joints: 1
+  rel_joints: 0
+  vels: 1
+  root_orient: 0.1
+  distance_map: 0.5
+  foot: 1
+
+PRED_MOTION_LENGTH: 30
+PREFIX_MOTION_LENGTH: 15
+MAX_LONG_TERM: 9
+DONWSAMPLING_LONG_TERM: 5

@@ -1,0 +1,11 @@
+# Expected processed Inter-X layout for training and evaluation.
+DATASET_NAME: InterX
+DATA_ROOT: data/
+CHECKPOINTS_DIR: checkpoints/
+MOTION_DIR: data/motions
+JOINTS_DIR: data/joints
+TEXT_DIR: data/texts_processed
+TEXT_TENSOR_DIR: data/texts_tensors
+MAX_MOTION_LENGTH: 150
+MAX_TEXT_LENGHT: 35
+UNIT_LENGTH: 4
